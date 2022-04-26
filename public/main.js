@@ -1,4 +1,3 @@
-// Focus div based on nav button click
 document.getElementById("homenav").onclick = function(){
     document.getElementById("home").className = "";
     document.getElementById("single").className = "hidden";
