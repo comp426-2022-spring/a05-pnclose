@@ -112,4 +112,65 @@ if(args.debug === true) {
     });
 }   
 
+// ------------------------------------------------------------------------------
+// -------------------------------- COIN STUFF ----------------------------------
+// ------------------------------------------------------------------------------
+
+function coinFlip() {
+    return Math.random() < 0.5 ? 'heads' : 'tails'
+}
+
+function coinFlips(flips) {
+    const arr = []
+    for(let i = 0; i<flips; i++) {
+      arr[i] = coinFlip()
+    }
+    return arr
+}
+
+function countFlips(flips) {
+    let hCnt = 0
+    let tCnt = 0
+    for(let i=0; i<flips.length; i++) {
+      if(flips[i] == 'heads') {
+        hCnt++;
+      } else {
+        tCnt++;
+      }
+    }
+    if(hCnt == 0 && tCnt == 0) {
+      return {}
+    }
+    if(hCnt == 0) {
+      return {tails: tCnt}
+    }
+    if(tCnt == 0) {
+      return {heads: hCnt}
+    }
+    return { heads: hCnt, tails: tCnt }
+}
+
+function flipACoin(call) {
+    let res = coinFlip()
+    var result;
+    if(call == res) {
+      result = 'win'
+    } else {
+      result = 'lose'
+    }
+    return { call: call, flip: res, result: result }
+}
+
+// ------------------------------------------------------------------------------
+// -------------------------------- ENDPOINTS ----------------------------------
+// ------------------------------------------------------------------------------
+
+app.get('/app/', (req, res) => {
+    res.json({"message":"Your API works! (200)"})
+    res.status(200)
+});
+
+
+
+
 
