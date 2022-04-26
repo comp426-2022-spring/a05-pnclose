@@ -1,5 +1,22 @@
 // Place your server entry point code here
 const args = require('minimist')(process.argv.slice(2))
+// Require Express.js
+var express = require("express")
+
+// Create App
+const app = express()
+
+// Require database
+const db = require('./src/services/database.js')
+
+// Require morgan
+const morgan = require('morgan')
+
+// Require fs
+const fs = require('fs')
+
+// Require cors
+const cors = require('cors')
 
 // Check minimist object
 console.log(args)
@@ -24,4 +41,15 @@ if (args.help || args.h) {
     console.log(help)
     process.exit(0)
 }
+
+
+// cors Set up
+app.use(cors())
+
+// Use static html files
+app.use(express.static('./public'));
+
+
+// Allow JSON body messages on all endpoints
+app.use(express.json())
 
