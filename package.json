@@ -21,7 +21,7 @@
     "coinserver",
     "API"
   ],
-  "author": "YOU",
+  "author": "Peter Close",
   "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/comp426-2022-spring/a05-johnmar3/issues"
@@ -29,7 +29,10 @@
   "homepage": "https://github.com/comp426-2022-spring/a05-johnmar3#readme",
   "dependencies": {
     "better-sqlite3": "^7.5.1",
-    "express": "^4.17.3",
+    "cors": "^2.8.5",
+    "dp": "^0.0.1",
+    "express": "^4.18.0",
+    "fs": "^0.0.1-security",
     "minimist": "^1.2.6",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.15"

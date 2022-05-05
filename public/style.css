@@ -3,13 +3,28 @@ div.hidden {
 }
 
 div.active {
-  border: 5px solid red;
+  border: 10px solid rgb(13, 255, 0);
 }
 
 img.bigcoin {
-  width: 50px;
+  width: 60px;
 }
 
-img.smallcoin {
-  width: 50px;
+#smallcoin {
+  width: 100px;
 }
+
+#calls-coin {
+  width: 100px;
+}
+
+#flip-coin {
+  width: 100px;
+}
+
+#title {
+  font-size: larger;
+}
+
+
+
